@@ -3,20 +3,31 @@ import random
 
 def start_game():
     print("""
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Welcome To *Spooky* The Number Guessing Game!
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Welcome To The *~Spooky~* Number Guessing Game!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     """)
 
     high_score = 0
-# handle errors
+
     while True:
         solution = random.randint(1, 10)
         tries = 0
 
         while True:
             guess = input("\nPick a number between 1 and 10, if you dare: ")
-            guess = int(guess)
+            try:
+                guess = int(guess)
+            except ValueError:
+                print(
+                    "\nThe spell only works if you enter a valid number between 1 and 10, won't you try again?")
+                continue
+
+            if (guess > 10 or guess < 1):
+                print(
+                    "\nThis number is outside the range of my discernment. Won't you try again?")
+                continue
+
             tries += 1
 
             if guess < solution:
@@ -37,12 +48,12 @@ def start_game():
 
         play_again = input("Do you dare risk another round? [y / n]: ")
 
-        if play_again.lower() == "y":
+        if play_again.lower() == ("y" or "yes"):
             print("\nThe current *~high score~* is {}".format(high_score))
             continue
         break
 
-    print("\nToo scared to guess again?! Have it your way! Bwa-ha-ha-ha!\n")
+    print("\nToo *~spooked~* to guess again?! Have it your way! Bwa-ha-ha-ha!\n")
 
 
 start_game()
