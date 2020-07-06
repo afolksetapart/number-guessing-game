@@ -19,6 +19,8 @@ def start_game():
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     """)
 
+    solution = random.randint(1, 10)
+
     """Psuedo-code Hints
     
     When the program starts, we want to:
