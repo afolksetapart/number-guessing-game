@@ -13,6 +13,12 @@ import random
 
 
 def start_game():
+    print("""
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Welcome To The Number Guessing Game!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    """)
+
     """Psuedo-code Hints
     
     When the program starts, we want to:
@@ -30,7 +36,6 @@ def start_game():
     ( You can add more features/enhancements if you'd like to. )
     """
     # write your code inside this function.
-
 
 
 # Kick off the program by calling the start_game function.
