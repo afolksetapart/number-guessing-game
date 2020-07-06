@@ -4,7 +4,7 @@ import random
 def start_game():
     print("""
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Welcome To *~Spooky~* The Number Guessing Game!
+    Welcome To The *~Spooky~* Number Guessing Game!
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     """)
 
@@ -18,12 +18,16 @@ def start_game():
             guess = input("\nPick a number between 1 and 10, if you dare: ")
             try:
                 guess = int(guess)
-                if (guess > 10 or guess < 1):
-                    raise ValueError
             except ValueError:
                 print(
-                    "\nThe spell only works if you enter a valid number between 1 and 10, try again!")
+                    "\nThe spell only works if you enter a valid number between 1 and 10, won't you try again?")
                 continue
+
+            if (guess > 10 or guess < 1):
+                print(
+                    "\nThis number is outside the range of my discernment. Won't you try again?")
+                continue
+
             tries += 1
 
             if guess < solution:
